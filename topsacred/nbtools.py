@@ -169,7 +169,7 @@ def convert_json_to_nice_dataframe(json_doc, prune=True):
                       np.any(result[k] != pd.Series([result[k].iloc[0]] * len(result))))]
         for k in result.keys():
             if k not in subset:
-                print('skipping {:>20s} = {}'.format(k, result[k].iloc[0]))
+                print('skipping {:>20s} = {}'.format(str(k), result[k].iloc[0]))
         result = result[subset]
 
     return result
